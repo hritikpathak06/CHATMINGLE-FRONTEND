@@ -29,8 +29,7 @@ import axios from "axios";
 import Loader from "./Loader";
 import UserList from "../Shared/UserList";
 import { getSender } from "../../helpers/Logics";
-import NotificationBadge from "react-notification-badge";
-import { Effect } from "react-notification-badge";
+
 
 const SideDrawer = () => {
   const [search, setSearch] = useState("all");
@@ -147,10 +146,6 @@ const SideDrawer = () => {
         <div style={{ display: "flex", alignItems: "center" }}>
           <Menu>
             <MenuButton p={1}>
-              <NotificationBadge
-                count={notification.length}
-                effect={Effect.SCALE}
-              />
               <FaBell style={{ fontSize: "30px" }} />
               {/* Menu List */}
               <MenuList pl={2}>
