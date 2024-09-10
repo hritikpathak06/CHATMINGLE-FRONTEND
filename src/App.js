@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { lazy } from "react";
+import {Route, Routes } from "react-router-dom";
 
-function App() {
+// Lazy Loading To Reduce The Loading of a page
+const HomePage = lazy(() => import("./pages/HomePage"));
+const ChatPage = lazy(() => import("./pages/ChatPage.js"));
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/chats" element={<ChatPage />} />
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;
